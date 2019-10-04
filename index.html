@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,49 +9,133 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,700,400' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/styles.css">
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc6mOqx7JFia_2Im_s5EL9Ss8oM2Del3A">
+</script>
 </head>
 
 <body>
-	<div class="icon sun-shower">
-  <div class="cloud"></div>
-  <div class="sun">
-    <div class="rays"></div>
-  </div>
-  <div class="rain"></div>
-</div>
-
-<div class="icon thunder-storm">
-  <div class="cloud"></div>
-  <div class="lightning">
-    <div class="bolt"></div>
-    <div class="bolt"></div>
-  </div>
-</div>
-
-<div class="icon cloudy">
-  <div class="cloud"></div>
-  <div class="cloud"></div>
-</div>
-
-<div class="icon flurries">
-  <div class="cloud"></div>
-  <div class="snow">
-    <div class="flake"></div>
-    <div class="flake"></div>
-  </div>
-</div>
-
-<div class="icon sunny">
-  <div class="sun">
-    <div class="rays"></div>
-  </div>
-</div>
-
-<div class="icon rainy">
-  <div class="cloud"></div>
-  <div class="rain"></div>
-</div>
-  <script src="js/scripts.js"></script>
+	<h1 style="text-align: right; font-size: 38px; color: white; background: #004c97; padding: 15px; margin: 0em auto 0.5em auto;">Food Near HFC's Building</h1>
+	<div id="map"></div>
+		<ul class="overlays">
+			<li class="act" style="display: none;">Soups R Salads<br>
+				<p>~4 min walk</p>
+				<p>Breakfast / Lunch</p>
+			</li>
+			<li class="act" style="display: none;">A Mano Kitchen &amp; Bar<br>
+				<p>~5 min walk</p>
+				<p>Comfort Food / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Pavone's Pizza<br>
+				<p>~5 min walk</p>
+				<p>Open All Day</p>
+			</li>
+			<li class="act" style="display: none;">Subway<br>
+				<p>~5 min walk</p>
+				<p>Deli / Open All Day</p>
+			</li>
+			<li class="act" style="display: none;">The Mission Restaurant<br>
+				<p>~3 min walk</p>
+				<p>Mexican / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Oh My Darling<br>
+				<p>~6 min walk</p>
+				<p>Comfort Food / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Sweet Praxis<br>
+				<p>~6 min walk</p>
+				<p>Bakery / Breakfast / Lunch</p>
+			</li>
+			<li class="act" style="display: none;">317 @ Montgomery Street<br>
+				<p>~3 min walk</p>
+				<p>American / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Café Kubal<br>
+				<p>~6 min walk</p>
+				<p>Breakfast / Lunch / Small Plates</p>
+			</li>
+			<li class="act" style="display: none;">The Fish Friar<br>
+				<p>~4 min walk</p>
+				<p>Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Cristos Café<br>
+				<p>~7 min walk</p>
+				<p>Breakfast / Lunch / Quick Bite</p>
+			</li>
+			<li class="act" style="display: none;">Downtown Deli<br>
+				<p>~2 min walk</p>
+				<p>Comfort Food / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">The Brine Well<br>
+				<p>~5 min walk</p>
+				<p>Chinese / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Tang Flavor Chinese<br>
+				<p>~5 min walk</p>
+				<p>Chinese / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Original Grain<br>
+				<p>~6 min walk</p>
+				<p>Breakfast / Lunch</p>
+			</li>
+			<li class="act" style="display: none;">Modern Malt<br>
+				<p>~8 min walk</p>
+				<p>Retro / Open All Day</p>
+			</li>
+			<li class="act" style="display: none;">Otro Cinco<br>
+				<p>~5 min walk</p>
+				<p>Latin / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Lieh &amp; Steigerwald<br>
+				<p>~5 min walk</p>
+				<p>Comfort Food / Open All Day</p>
+			</li>
+			<li class="act" style="display: none;">Miss Syracuse Diner<br>
+				<p>~5 min walk</p>
+				<p>Breakfast / Lunch</p>
+			</li>
+			<li class="act" style="display: none;">Ale 'N' Angus Pub<br>
+				<p>~6 min walk</p>
+				<p>Pub Food / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Aloha Japanese Bento<br>
+				<p>~6 min walk</p>
+				<p>Japanese / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Darwin On Clinton<br>
+				<p>~7 min walk</p>
+				<p>Sandwiches / Comfort Food / Breakfast / Lunch</p>
+			</li>
+			<li class="act" style="display: none;">Jimmy John's<br>
+				<p>~6 min walk</p>
+				<p>Sandwiches / Open All Day</p>
+			</li>
+			<li class="act" style="display: none;">Joe's Deli<br>
+				<p>~7 min walk</p>
+				<p>Deli / Open All Day</p>
+			</li>
+			<li class="act" style="display: none;">Peppino's Neopolitan<br>
+				<p>~8 min walk</p>
+				<p>Pizzeria / Comfort Food / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Lemon Grass Restaurant<br>
+				<p>~8 min walk</p>
+				<p>Thai / Lunch / Dinner</p>
+			</li>
+			<li class="act" style="display: none;">Today's Special<br>
+				<p>~6 min walk</p>
+				<p>Quick Bite / Sandwiches / Breakfast / Lunch</p>
+			</li>
+		  	<li class="act" style="display: none;">Jail Hoss Rock Café<br>
+				<p>~1 min walk</p>
+				<p>Café / Deli / Breakfast / Lunch </p>
+			</li>
+			<li class="act" style="display: none;">Funk 'n Waffles<br>
+				<p>~7 min walk</p>
+				<p>Comfort Food / Open All Day</p>
+			</li>
+		</ul>
+	
+	<script src="js/scripts.js"></script>
 </body>
 </html>
