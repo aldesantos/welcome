@@ -5,7 +5,7 @@ var markers = [
   ['4', 43.0478464, -76.1494123],
   ['5', 43.0478464, -76.1494123],
   ['6', 43.047853, -76.1509318],
-  ['7', 43.0483201, -76.1478492],
+  ['7', 43.0507161, -76.1528009],
   ['8', 43.0483201, -76.1478492],
   ['9', 43.0478657, -76.1507971],
   ['10', 43.0483658, -76.1506301],
@@ -36,9 +36,23 @@ function initialize() {
       map = new google.maps.Map(document.getElementById('map'), {
         disableDefaultUI: true,
         center: center,
-        zoom: 19
+        zoom: 18
   });
-
+ var flightPlanCoordinates = [
+    {lat: 43.048572, lng: -76.148123},
+    {lat: 43.048572, lng: -76.147600},
+    {lat: 43.048015, lng: -76.147600},
+    {lat: 43.048015, lng: -76.148123},
+	 {lat: 43.048572, lng: -76.148123}
+  ];
+  var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    geodesic: true,
+    strokeColor: '#019cde',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });	
+	flightPath.setMap(map);
   var Markers = [];
   
   var iconNormal = 'https://i.stack.imgur.com/AAsD3.png',
@@ -59,7 +73,7 @@ function initialize() {
       //var selectedMarker;
       bounds.extend(myLatLng);
       Markers.push(eachMarker);
-	  map.setZoom(19);
+	  map.setZoom(18);
      /* google.maps.event.addListener(eachMarker,'click', function() {
         changeIcon(this);
       });
@@ -91,6 +105,15 @@ function initialize() {
       }
     }
   }
+	var noPoi = [
+{
+    featureType: "poi",
+    stylers: [
+      { visibility: "off" }
+    ]   
+  }
+];
+map.setOptions({styles: noPoi});
   setMarkers(map);   
 	currentHighlight = 0;
   setInterval(function() {
