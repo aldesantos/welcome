@@ -1,6 +1,6 @@
 #map {
-  width: 920px;
-  height: 764px;
+  width: 904px;
+  height: 665px;
   background: gray;
 }
 
@@ -10,7 +10,7 @@
   padding: 0;
   list-style: none;
   position: absolute;
-  top: 10px;
+  top: 120px;
   left: 10px;
   padding: 1em;
   background: #FFF;
